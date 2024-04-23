@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('sell', function (Blueprint $table) {
             $table->id();
+            $table->string('customer_id');
+            $table->decimal('total', 8, 2)->default(0.00);
+            $table->string('due');
+            $table->string('status');
             $table->timestamps();
         });
     }
